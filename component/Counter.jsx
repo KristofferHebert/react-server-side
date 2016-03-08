@@ -9,13 +9,15 @@ const Counter = React.createClass({
     increment(e){
         e.preventDefault()
 
-        this.state({clicks: this.state.click++})
+        let clicks = this.state.click++
+
+        this.state({clicks: clicks })
 
     },
     render(){
         return (
             <span>
-                <a href="#" onClick={this.increment}>Clicks {this.state.clicks}</a>
+                <a onClick={this.increment}>Clicks: {this.state.clicks}</a>
             </span>
         )
     }
